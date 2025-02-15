@@ -15,7 +15,11 @@ export default async function Home() {
   return (
     <>
       <SignedOut>
+        <div className="w-full flex items-center justify-center">
+
+        
           <SignIn routing="hash" />
+          </div>
       </SignedOut>
       <SignedIn>
         {/* This is a fallback in case the redirect hasn't happened yet */}
