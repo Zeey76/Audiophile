@@ -13,21 +13,41 @@ const Page = async () => {
     <>
       <div>
         <div className="relative h-[560px] w-full">
-          <img
-            src="/assets/home/desktop/image-hero.jpg"
-            className="w-full h-full object-cover object-bottom hidden md:block"
-            alt="Hero"
-          />
-          <img
-            src="/assets/home/tablet/image-header.jpg"
-            className="w-full h-full object-cover object-bottom hidden sm:block md:hidden"
-            alt="Hero"
-          />
-          <img
-            src="/assets/home/mobile/image-header.jpg"
-            className="w-full h-full object-cover object-bottom block sm:hidden"
-            alt="Hero"
-          />
+          <div className="relative w-full h-full">
+            {/* Desktop Image */}
+            <div className="hidden md:block">
+              <Image
+                src="/assets/home/desktop/image-hero.jpg"
+                alt="Hero"
+                fill
+                className="object-cover object-bottom"
+                priority
+              />
+            </div>
+
+            {/* Tablet Image */}
+            <div className="hidden sm:block md:hidden">
+              <Image
+                src="/assets/home/tablet/image-header.jpg"
+                alt="Hero"
+                fill
+                className="object-cover object-bottom"
+                priority
+              />
+            </div>
+
+            {/* Mobile Image */}
+            <div className="block sm:hidden">
+              <Image
+                src="/assets/home/mobile/image-header.jpg"
+                alt="Hero"
+                fill
+                className="object-cover object-bottom"
+                priority
+              />
+            </div>
+          </div>
+
           <div className="absolute top-1/2 left-1/2 w-full transform -translate-x-1/2 -translate-y-1/2 text-white">
             <div className="w-[80%] mx-auto text-center md:text-left flex flex-col items-center md:items-start gap-6">
               <p className="text-sm uppercase tracking-widest">New Product</p>
@@ -86,12 +106,16 @@ const Page = async () => {
               </div>
             </div>
             <div className="relative h-[300px] w-full">
-          <img
-            src="/assets/home/desktop/image-speaker-zx7.jpg"
-            className="w-full h-full object-cover object-bottom hidden md:block"
-            alt=""
-          />
-          {/* <img
+              <div className="hidden md:block relative w-full h-full">
+                <Image
+                  src="/assets/home/desktop/image-speaker-zx7.jpg"
+                  alt="Speaker ZX7"
+                  fill
+                  className="object-cover object-bottom"
+                  priority
+                />
+              </div>
+              {/* <img
             src="/assets/home/tablet/image-header.jpg"
             className="w-full h-full object-cover object-bottom hidden sm:block md:hidden"
             alt="Hero"
@@ -101,26 +125,31 @@ const Page = async () => {
             className="w-full h-full object-cover object-bottom block sm:hidden"
             alt="Hero"
           /> */}
-          <div className="absolute top-1/2 left-1/2 w-full transform -translate-x-1/2 -translate-y-1/2 text-black">
-            <div className="w-[80%] mx-auto flex flex-col  gap-6">
-              <h2 className="text-3xl uppercase">ZX7 speaker</h2>
-              <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
-                See product
-              </button>
+              <div className="absolute top-1/2 left-1/2 w-full transform -translate-x-1/2 -translate-y-1/2 text-black">
+                <div className="w-[80%] mx-auto flex flex-col  gap-6">
+                  <h2 className="text-3xl uppercase">ZX7 speaker</h2>
+                  <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
+                    See product
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-[1rem] h-[300px]">
+              <Image
+                src="/assets/home/desktop/image-earphones-yx1.jpg"
+                alt="YX1 Earphones"
+                width={500} // Adjust width as needed
+                height={300} // Adjust height as needed
+                className="h-full object-cover rounded-sm"
+              />
+              <div className="bg-[#f1f1f1] flex flex-col  p-[4rem] justify-center gap-6 w-full rounded-sm">
+                <h2 className="text-3xl uppercase">Yx1 earphones</h2>
+                <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
+                  See product
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="flex gap-[1rem] h-[300px]">
-            <img src="/assets/home/desktop/image-earphones-yx1.jpg" alt="" className=" h-full object-cover rounded-sm"/>
-            <div className="bg-[#f1f1f1] flex flex-col  p-[4rem] justify-center gap-6 w-full rounded-sm">
-              <h2 className="text-3xl uppercase">Yx1 earphones</h2>
-              <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
-                See product
-              </button>
-            </div>
-        </div>
-          </div>
-          
         </div>
       </div>
     </>
