@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+.header, .nav-bar, .footer {
+  margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  .header, .nav-bar, .footer {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
