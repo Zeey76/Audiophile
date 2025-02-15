@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Gear = () => {
   return (
@@ -14,9 +15,11 @@ const Gear = () => {
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <img
+      <Image
         src="/assets/shared/desktop/image-best-gear.jpg"
-        alt=""
+        alt="Best Gear"
+        width={500} // Adjust width as needed
+        height={600} // Adjust height as needed
         className="w-[50%] h-full object-cover rounded-sm"
       />
     </div>
