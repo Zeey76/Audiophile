@@ -8,7 +8,7 @@ const Navbar = () => {
       <ul className="flex flex-col gap-4 items-center">
         {navItems.map((item) => (
           <li
-            className="relative w-full max-w-[450px] bg-[#f1f1f1] text-white p-4 rounded-md flex flex-col gap-4 items-center justify-center mb-[5rem]"
+            className="relative w-full max-w-[450px] bg-[#f1f1f1] text-white p-4 rounded-md flex flex-col gap-4 items-center justify-center mb-[4rem]"
             key={item}
           >
             <Image
