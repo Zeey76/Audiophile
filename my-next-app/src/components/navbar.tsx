@@ -4,11 +4,11 @@ import Image from "next/image";
 const Navbar = () => {
   const navItems = ["headphones", "speakers", "earphones"];
   return (
-    <div className="sm:hidden absolute left-1/2 -translate-x-1/2 nav-bar w-full mx-auto  bg-white pt-[5rem] px-4">
+    <div className="sm:hidden nav-bar w-full mx-auto h-screen bg-white pt-[5rem] pb-[1.5rem] px-4 overflow-y-auto">
       <ul className="flex flex-col gap-4 items-center">
         {navItems.map((item) => (
           <li
-            className="relative w-full bg-[#f1f1f1] text-white p-4 rounded-md flex flex-col gap-4 items-center justify-center mb-[5rem]"
+            className="relative w-full max-w-[450px] bg-[#f1f1f1] text-white p-4 rounded-md flex flex-col gap-4 items-center justify-center mb-[5rem]"
             key={item}
           >
             <Image

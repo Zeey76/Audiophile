@@ -15,7 +15,7 @@ const Page = async () => {
         <div className="relative h-[560px] w-full">
           <div className="relative w-full h-full">
             {/* Desktop Image */}
-            <div className="hidden md:block">
+            <div className="hidden sm:block">
               <Image
                 src="/assets/home/desktop/image-hero.jpg"
                 alt="Hero"
@@ -31,7 +31,7 @@ const Page = async () => {
                 src="/assets/home/tablet/image-header.jpg"
                 alt="Hero"
                 fill
-                className="object-cover object-bottom"
+                className="object-cover"
                 priority
               />
             </div>
@@ -64,7 +64,7 @@ const Page = async () => {
             </div>
           </div>
         </div>
-        <div className="w-[80%] mx-auto pt-[8rem]">
+        <div className="w-full px-8 md:w-[80%] mx-auto pt-[8rem]">
           <ul className="flex flex-col  sm:flex-row gap-4 items-center mb-[3rem]">
             {navItems.map((item) => (
               <li
@@ -84,16 +84,30 @@ const Page = async () => {
             ))}
           </ul>
           <div className="flex flex-col gap-[1.5rem] mb-[5rem]">
-            <div className="bg-[#d87d4a] w-full h-[380px] rounded-sm">
-              <div className="w-[80%] h-full mx-auto flex justify-between items-center">
+            <div className="bg-[#d87d4a] w-full h-[600px] sm:h-[450px] md:h-[380px] rounded-sm">
+              <div className="sm:w-full md:w-[80%] h-full mx-auto flex flex-col md:flex-row gap-6 justify-center md:justify-between items-center">
                 <Image
                   src={`/assets/home/desktop/image-speaker-zx9.png`}
                   alt=""
                   width={270}
                   height={270}
-                  className="self-end"
+                  className="hidden md:block self-end"
                 />
-                <div className="text-white w-[330px] flex flex-col gap-[2rem]">
+                <Image
+                  src={`/assets/home/tablet/image-speaker-zx9.png`}
+                  alt=""
+                  width={100}
+                  height={100}
+                  className="hidden sm:block md:hidden"
+                />
+                <Image
+                  src={`/assets/home/mobile/image-speaker-zx9.png`}
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="block sm:hidden"
+                />
+                <div className="text-white w-[330px] flex flex-col gap-[2rem] items-center text-center md:text-left md:items-start">
                   <h2 className="uppercase text-5xl">ZX9 speaker</h2>
                   <p>
                     Upgrade to premium speakers that are phenomically built to
@@ -106,25 +120,27 @@ const Page = async () => {
               </div>
             </div>
             <div className="relative h-[300px] w-full">
-              <div className="hidden md:block relative w-full h-full">
+              <div className=" relative w-full h-full">
                 <Image
                   src="/assets/home/desktop/image-speaker-zx7.jpg"
                   alt="Speaker ZX7"
                   fill
-                  className="object-cover object-bottom"
-                  priority
+                  className="object-cover object-bottom hidden md:block"
+                
+                />
+                <Image
+                  src="/assets/home/tablet/image-speaker-zx7.jpg"
+                  alt="Speaker ZX7"
+                  fill
+                  className="object-cover object-bottom hidden sm:block md:hidden"
+                />
+                <Image
+                  src="/assets/home/mobile/image-speaker-zx7.jpg"
+                  alt="Speaker ZX7"
+                  fill
+                  className="object-cover object-bottom block sm:hidden"
                 />
               </div>
-              {/* <img
-            src="/assets/home/tablet/image-header.jpg"
-            className="w-full h-full object-cover object-bottom hidden sm:block md:hidden"
-            alt="Hero"
-          />
-          <img
-            src="/assets/home/mobile/image-header.jpg"
-            className="w-full h-full object-cover object-bottom block sm:hidden"
-            alt="Hero"
-          /> */}
               <div className="absolute top-1/2 left-1/2 w-full transform -translate-x-1/2 -translate-y-1/2 text-black">
                 <div className="w-[80%] mx-auto flex flex-col  gap-6">
                   <h2 className="text-3xl uppercase">ZX7 speaker</h2>
@@ -134,21 +150,44 @@ const Page = async () => {
                 </div>
               </div>
             </div>
-            <div className="flex gap-[1rem] h-[300px]">
-              <Image
-                src="/assets/home/desktop/image-earphones-yx1.jpg"
-                alt="YX1 Earphones"
-                width={500} // Adjust width as needed
-                height={300} // Adjust height as needed
-                className="h-full object-cover rounded-sm"
-              />
-              <div className="bg-[#f1f1f1] flex flex-col  p-[4rem] justify-center gap-6 w-full rounded-sm">
-                <h2 className="text-3xl uppercase">Yx1 earphones</h2>
-                <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
-                  See product
-                </button>
-              </div>
-            </div>
+            <div className="flex flex-col sm:flex-row gap-[1rem] w-full">
+  {/* Image Section */}
+  <div className="w-full sm:w-1/2 h-[250px] sm:h-[300px]">
+    {/* Desktop Image */}
+    <Image
+      src="/assets/home/desktop/image-earphones-yx1.jpg"
+      alt="YX1 Earphones"
+      width={500}
+      height={300}
+      className="h-full w-full object-cover rounded-md hidden md:block"
+    />
+    {/* Tablet Image */}
+    <Image
+      src="/assets/home/tablet/image-earphones-yx1.jpg"
+      alt="YX1 Earphones"
+      width={300}
+      height={300}
+      className="h-full w-full object-cover rounded-md hidden sm:block md:hidden"
+    />
+    {/* Mobile Image */}
+    <Image
+      src="/assets/home/mobile/image-earphones-yx1.jpg"
+      alt="YX1 Earphones"
+      width={200}
+      height={200}
+      className="h-full w-full object-cover rounded-md block sm:hidden"
+    />
+  </div>
+
+  {/* Text Section */}
+  <div className="bg-[#f1f1f1] flex flex-col justify-center gap-6 p-[2rem] md:p-[4rem] w-full sm:w-1/2 h-[250px] sm:h-[300px] rounded-md">
+    <h2 className="sm:text-2xl md:text-3xl uppercase">Yx1 Earphones</h2>
+    <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
+      See product
+    </button>
+  </div>
+</div>
+
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col sm:flex-row gap-8 justify-between items-center">
           <div className="flex flex-col gap-8 sm:gap-16 ">
-            <p className=" sm:w-full lg:max-w-[550px] text-gray-400">
+            <p className=" sm:w-full text-center sm:text-left lg:max-w-[550px] text-gray-400">
               Audiophile is an all in one stop to fulfill your audio needs.
               We&apos;re a small team of music lovers and sound specialists who are
               devoted to helping you get the most out of personal audio. Come
