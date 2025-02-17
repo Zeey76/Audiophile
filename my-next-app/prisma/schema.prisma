@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id            Int      @id @default(autoincrement())
+  slug          String   @unique
+  name          String
+  category      String
+  isNew         Boolean  @default(false)
+  price         Int
+  description   String
+  features      String   
+  
+  // Related images
+  imageMobile    String
+  imageTablet    String
+  imageDesktop   String
+  
+  categoryImageMobile    String
+  categoryImageTablet    String
+  categoryImageDesktop   String
+  
+  // Gallery images
+  galleryFirstMobile    String
+  galleryFirstTablet    String
+  galleryFirstDesktop   String
+  
+  gallerySecondMobile   String
+  gallerySecondTablet   String
+  gallerySecondDesktop  String
+  
+  galleryThirdMobile    String
+  galleryThirdTablet    String
+  galleryThirdDesktop   String
+  
+  // Relations
+  includedItems  IncludedItem[]
+  relatedProducts RelatedProduct[]
+}
+
+model IncludedItem {
+  id        Int      @id @default(autoincrement())
+  quantity  Int
+  item      String
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id])
+}
+
+model RelatedProduct {
+  id        Int      @id @default(autoincrement())
+  slug      String
+  name      String
+  imageMobile    String
+  imageTablet    String
+  imageDesktop   String
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id])
+}
