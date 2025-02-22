@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <>
       {/* Header Section */}
-      <div className="bg-black p-4 w-full">
+      <div className="bg-black p-10 w-full">
         <div className="relative">
           <div className="header flex justify-between items-center text-white w-full">
             {/* Mobile Menu Button */}

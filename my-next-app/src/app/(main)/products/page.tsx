@@ -2,6 +2,7 @@ import React from "react";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 const Page = async () => {
   const { userId } = await auth();
   const navItems = ["headphones", "speakers", "earphones"];
@@ -79,7 +80,7 @@ const Page = async () => {
                   className="absolute -top-12 z-20 mb-4"
                 />
                 <h3 className="mt-[5rem] uppercase text-black">{item}</h3>
-                <p className="uppercase text-[hsl(0,0%,25%)]">Shop</p>
+                <Link href={`/products/category/${item}`}><p className="uppercase text-[hsl(0,0%,25%)]">Shop</p></Link>
               </li>
             ))}
           </ul>
@@ -126,7 +127,6 @@ const Page = async () => {
                   alt="Speaker ZX7"
                   fill
                   className="object-cover object-bottom hidden md:block"
-                
                 />
                 <Image
                   src="/assets/home/tablet/image-speaker-zx7.jpg"
@@ -151,43 +151,44 @@ const Page = async () => {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-[1rem] w-full">
-  {/* Image Section */}
-  <div className="w-full sm:w-1/2 h-[250px] sm:h-[300px]">
-    {/* Desktop Image */}
-    <Image
-      src="/assets/home/desktop/image-earphones-yx1.jpg"
-      alt="YX1 Earphones"
-      width={500}
-      height={300}
-      className="h-full w-full object-cover rounded-md hidden md:block"
-    />
-    {/* Tablet Image */}
-    <Image
-      src="/assets/home/tablet/image-earphones-yx1.jpg"
-      alt="YX1 Earphones"
-      width={300}
-      height={300}
-      className="h-full w-full object-cover rounded-md hidden sm:block md:hidden"
-    />
-    {/* Mobile Image */}
-    <Image
-      src="/assets/home/mobile/image-earphones-yx1.jpg"
-      alt="YX1 Earphones"
-      width={200}
-      height={200}
-      className="h-full w-full object-cover rounded-md block sm:hidden"
-    />
-  </div>
+              {/* Image Section */}
+              <div className="w-full sm:w-1/2 h-[250px] sm:h-[300px]">
+                {/* Desktop Image */}
+                <Image
+                  src="/assets/home/desktop/image-earphones-yx1.jpg"
+                  alt="YX1 Earphones"
+                  width={500}
+                  height={300}
+                  className="h-full w-full object-cover rounded-md hidden md:block"
+                />
+                {/* Tablet Image */}
+                <Image
+                  src="/assets/home/tablet/image-earphones-yx1.jpg"
+                  alt="YX1 Earphones"
+                  width={300}
+                  height={300}
+                  className="h-full w-full object-cover rounded-md hidden sm:block md:hidden"
+                />
+                {/* Mobile Image */}
+                <Image
+                  src="/assets/home/mobile/image-earphones-yx1.jpg"
+                  alt="YX1 Earphones"
+                  width={200}
+                  height={200}
+                  className="h-full w-full object-cover rounded-md block sm:hidden"
+                />
+              </div>
 
-  {/* Text Section */}
-  <div className="bg-[#f1f1f1] flex flex-col justify-center gap-6 p-[2rem] md:p-[4rem] w-full sm:w-1/2 h-[250px] sm:h-[300px] rounded-md">
-    <h2 className="sm:text-2xl md:text-3xl uppercase">Yx1 Earphones</h2>
-    <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
-      See product
-    </button>
-  </div>
-</div>
-
+              {/* Text Section */}
+              <div className="bg-[#f1f1f1] flex flex-col justify-center gap-6 p-[2rem] md:p-[4rem] w-full sm:w-1/2 h-[250px] sm:h-[300px] rounded-md">
+                <h2 className="sm:text-2xl md:text-3xl uppercase">
+                  Yx1 Earphones
+                </h2>
+                <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
+                  See product
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

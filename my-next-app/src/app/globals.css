@@ -26,3 +26,22 @@
   }
 }
 
+@media (min-width: 1200px) {
+.category {
+  flex-direction: row;
+
+}
+.category-text {
+  padding-left: 3rem;
+  width: 500px;
+  align-items: flex-start;
+}
+
+.category-image {
+  width: 500px;
+}
+.description {
+  text-align: left;
+}
+}
+
