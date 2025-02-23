@@ -1,19 +1,30 @@
-"use client";
-import Image from "next/image";
+"use client"
 import { useState, useEffect } from "react";
-import Navbar from "./navbar";
-import SignOut from "./SignOut";
+import Image from "next/image";
 import Link from "next/link";
-
+// import SignOut from "./SignOut";
+import Navbar from "./navbar";
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
 
+  const toggleNavBar = () => {
+    setShowNavBar(!showNavBar);
+  };
+
+  const closeNavBar = () => {
+    setShowNavBar(false);
+  };
+
   useEffect(() => {
     if (showNavBar) {
-      document.body.classList.add("overflow-hidden");
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.classList.remove("overflow-hidden");
+      document.body.style.overflow = "auto";
     }
+
+    return () => {
+      document.body.style.overflow = "auto"; 
+    };
   }, [showNavBar]);
 
   return (
@@ -23,10 +34,7 @@ const Header = () => {
         <div className="relative">
           <div className="header flex justify-between items-center text-white w-full">
             {/* Mobile Menu Button */}
-            <button
-              className="sm:hidden"
-              onClick={() => setShowNavBar(!showNavBar)}
-            >
+            <button className="sm:hidden" onClick={toggleNavBar}>
               <Image
                 src="/assets/shared/tablet/icon-hamburger.svg"
                 alt="Menu"
@@ -51,10 +59,10 @@ const Header = () => {
                 <p className="uppercase text-xs">Headphones</p>
               </Link>
               <Link href="/products/category/speakers">
-                <p className="uppercase text-xs">Headphones</p>
+                <p className="uppercase text-xs">Speakers</p>
               </Link>
               <Link href="/products/category/earphones">
-                <p className="uppercase text-xs">Headphones</p>
+                <p className="uppercase text-xs">Earphones</p>
               </Link>
             </div>
 
@@ -66,14 +74,14 @@ const Header = () => {
                 width={20}
                 height={20}
               />
-              <SignOut />
+              {/* <SignOut /> */}
             </div>
           </div>
         </div>
       </div>
 
       {/* Navbar (Visible only when toggled) */}
-      {showNavBar && <Navbar />}
+      {showNavBar && <Navbar closeNavBar={closeNavBar} />}
     </>
   );
 };

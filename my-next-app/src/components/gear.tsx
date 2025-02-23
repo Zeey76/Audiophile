@@ -18,22 +18,22 @@ const Gear = () => {
       <Image
         src="/assets/shared/desktop/image-best-gear.jpg"
         alt="Best Gear"
-        width={500} 
-        height={600} 
+        width={500}
+        height={600}
         className="w-[50%] h-full hidden md:block object-cover rounded-md"
       />
       <Image
         src="/assets/shared/tablet/image-best-gear.jpg"
         alt="Best Gear"
-        width={600} // Adjust width as needed
-        height={600} // Adjust height as needed
+        width={600}
+        height={600}
         className="w-full h-full object-cover rounded-md hidden sm:block md:hidden"
       />
       <Image
         src="/assets/shared/tablet/image-best-gear.jpg"
         alt="Best Gear"
-        width={600} // Adjust width as needed
-        height={600} // Adjust height as needed
+        width={600}
+        height={600}
         className="w-full h-full object-cover rounded-md block sm:hidden"
       />
     </div>

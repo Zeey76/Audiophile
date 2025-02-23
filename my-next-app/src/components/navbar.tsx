@@ -2,11 +2,15 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Navbar = () => {
+interface NavbarProps {
+  closeNavBar: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ closeNavBar }) => {
   const navItems = ["headphones", "speakers", "earphones"];
   return (
     <div className="sm:hidden nav-bar w-full mx-auto h-screen bg-white pt-[5rem] pb-[1.5rem] px-4 overflow-y-auto">
-      <ul className="flex flex-col gap-4 items-center">
+      <ul className="flex flex-col gap-4 items-center mb-20">
         {navItems.map((item) => (
           <li
             className="relative w-full max-w-[450px] bg-[#f1f1f1] text-white p-4 rounded-md flex flex-col gap-4 items-center justify-center mb-[4rem]"
@@ -20,7 +24,7 @@ const Navbar = () => {
               className="absolute -top-12 z-20 mb-4"
             />
             <h3 className="mt-[5rem] uppercase text-black">{item}</h3>
-            <Link href={`/products/category/${item}`}>
+            <Link href={`/products/category/${item}`} onClick={closeNavBar}>
               <p className="uppercase text-[hsl(0,0%,25%)]">Shop</p>
             </Link>
           </li>

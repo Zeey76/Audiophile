@@ -1,5 +1,6 @@
 import { getProductsByCategory } from "../../../../../../../prisma/seed";
 import Image from "next/image";
+import Link from "next/link";
 
 // Generate static pages for specific categories
 export async function generateStaticParams(): Promise<{ category: string }[]> {
@@ -9,13 +10,13 @@ export async function generateStaticParams(): Promise<{ category: string }[]> {
   }));
 }
 
-
-
-
-
-const CategoryPage = async ({ params }: { params: Promise<{ category: string }> }) => {
-  const {category} = await params
-  const products =  await getProductsByCategory(category);
+const CategoryPage = async ({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) => {
+  const { category } = await params;
+  const products = await getProductsByCategory(category);
 
   return (
     <>
@@ -56,9 +57,11 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
                 <p className="mb-6 text-center description">
                   {product.description}
                 </p>
-                <button className="uppercase p-[10px] bg-[#d87d4a] w-[180px] rounded-sm">
-                  See product
-                </button>
+                <Link href={`/products/slug/${product.slug}`}>
+                  <button className="uppercase p-[10px] bg-[#d87d4a] w-[180px] rounded-sm">
+                    See product
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -66,6 +69,6 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
       </div>
     </>
   );
-}
+};
 
-export default CategoryPage
+export default CategoryPage;

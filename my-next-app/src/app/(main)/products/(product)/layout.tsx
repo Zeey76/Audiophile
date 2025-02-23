@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,7 +23,9 @@ export default function RootLayout({
               className="absolute -top-12 z-20 mb-4"
             />
             <h3 className="mt-[5rem] uppercase text-black">{item}</h3>
-            <p className="uppercase text-[hsl(0,0%,25%)]">Shop</p>
+            <Link href={`/products/category/${item}`}>
+              <p className="uppercase text-[hsl(0,0%,25%)]">Shop</p>
+            </Link>
           </li>
         ))}
       </ul>

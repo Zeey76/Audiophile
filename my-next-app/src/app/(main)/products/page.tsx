@@ -59,9 +59,11 @@ const Page = async () => {
                 Experience natural, lifelike audio and exceptional build quality
                 made for the passionate music enthusiast.
               </p>
-              <button className="uppercase p-[10px] bg-[#d87d4a] w-[180px] rounded-sm">
-                See product
-              </button>
+              <Link href="/products/slug/xx99-mark-two-headphones">
+                <button className="uppercase p-[10px] bg-[#d87d4a] w-[180px] rounded-sm">
+                  See product
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -116,9 +118,11 @@ const Page = async () => {
                     Upgrade to premium speakers that are phenomically built to
                     deliver truly remarkable sound
                   </p>
-                  <button className="uppercase p-[10px] bg-black w-[180px] rounded-sm">
-                    See product
-                  </button>
+                  <Link href="/products/slug/zx9-speaker">
+                    <button className="uppercase p-[10px] bg-black w-[180px] rounded-sm">
+                      See product
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -146,9 +150,11 @@ const Page = async () => {
               <div className="absolute top-1/2 left-1/2 w-full transform -translate-x-1/2 -translate-y-1/2 text-black">
                 <div className="w-[80%] mx-auto flex flex-col  gap-6">
                   <h2 className="text-3xl uppercase">ZX7 speaker</h2>
-                  <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
-                    See product
-                  </button>
+                  <Link href="/products/slug/zx7-speaker">
+                    <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
+                      See product
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -186,9 +192,11 @@ const Page = async () => {
                 <h2 className="sm:text-2xl md:text-3xl uppercase">
                   Yx1 Earphones
                 </h2>
-                <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
-                  See product
-                </button>
+                <Link href="/products/slug/yx1-earphones">
+                  <button className="uppercase p-[10px] bg-transparent border border-black w-[180px] rounded-sm">
+                    See product
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
