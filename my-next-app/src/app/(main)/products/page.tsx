@@ -80,7 +80,9 @@ const Page = async () => {
                   className="absolute -top-12 z-20 mb-4"
                 />
                 <h3 className="mt-[5rem] uppercase text-black">{item}</h3>
-                <Link href={`/products/category/${item}`}><p className="uppercase text-[hsl(0,0%,25%)]">Shop</p></Link>
+                <Link href={`/products/category/${item}`}>
+                  <p className="uppercase text-[hsl(0,0%,25%)]">Shop</p>
+                </Link>
               </li>
             ))}
           </ul>

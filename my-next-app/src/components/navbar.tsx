@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const navItems = ["headphones", "speakers", "earphones"];
@@ -19,7 +20,9 @@ const Navbar = () => {
               className="absolute -top-12 z-20 mb-4"
             />
             <h3 className="mt-[5rem] uppercase text-black">{item}</h3>
-            <p className="uppercase text-[hsl(0,0%,25%)]">Shop</p>
+            <Link href={`/products/category/${item}`}>
+              <p className="uppercase text-[hsl(0,0%,25%)]">Shop</p>
+            </Link>
           </li>
         ))}
       </ul>

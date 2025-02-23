@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Navbar from "./navbar";
 import SignOut from "./SignOut";
+import Link from "next/link";
 
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
@@ -22,7 +23,10 @@ const Header = () => {
         <div className="relative">
           <div className="header flex justify-between items-center text-white w-full">
             {/* Mobile Menu Button */}
-            <button className="sm:hidden" onClick={() => setShowNavBar(!showNavBar)}>
+            <button
+              className="sm:hidden"
+              onClick={() => setShowNavBar(!showNavBar)}
+            >
               <Image
                 src="/assets/shared/tablet/icon-hamburger.svg"
                 alt="Menu"
@@ -43,9 +47,15 @@ const Header = () => {
             {/* Desktop Nav */}
             <div className="hidden sm:flex sm:gap-4">
               <p className="uppercase text-xs">Home</p>
-              <p className="uppercase text-xs">Headphones</p>
-              <p className="uppercase text-xs">Speakers</p>
-              <p className="uppercase text-xs">Earphones</p>
+              <Link href="/products/category/headphones">
+                <p className="uppercase text-xs">Headphones</p>
+              </Link>
+              <Link href="/products/category/speakers">
+                <p className="uppercase text-xs">Headphones</p>
+              </Link>
+              <Link href="/products/category/earphones">
+                <p className="uppercase text-xs">Headphones</p>
+              </Link>
             </div>
 
             {/* Cart and Sign Out */}

@@ -2,25 +2,25 @@ import { getProductsByCategory } from "../../../../../../../prisma/seed";
 import Image from "next/image";
 
 // Generate static pages for specific categories
-export async function generateStaticParams() {
-  const categories = ["earphones", "headphones", "speakers"]; 
-
+export async function generateStaticParams(): Promise<{ category: string }[]> {
+  const categories = ["earphones", "headphones", "speakers"];
   return categories.map((category) => ({
-    category,
+    category: category.toString(),
   }));
 }
 
-export default async function CategoryPage({
-  params,
-}: {
-  params: { category: string };
-}) {
-  const products = await getProductsByCategory(params.category);
+
+
+
+
+const CategoryPage = async ({ params }: { params: Promise<{ category: string }> }) => {
+  const {category} = await params
+  const products =  await getProductsByCategory(category);
 
   return (
     <>
       <h2 className="bg-black p-12 w-full text-white uppercase text-2xl text-center">
-        {params.category}
+        {category}
       </h2>
       <div className="pt-16 md:px-16 px-8  mx-auto">
         {products.map((product) => (
@@ -67,3 +67,5 @@ export default async function CategoryPage({
     </>
   );
 }
+
+export default CategoryPage
