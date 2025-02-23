@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import SignOut from "./SignOut";
+import SignOut from "./SignOut";
 import Navbar from "./navbar";
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
@@ -74,7 +74,7 @@ const Header = () => {
                 width={20}
                 height={20}
               />
-              {/* <SignOut /> */}
+              <SignOut />
             </div>
           </div>
         </div>
