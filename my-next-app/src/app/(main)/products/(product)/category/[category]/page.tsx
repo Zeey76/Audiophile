@@ -20,10 +20,10 @@ const CategoryPage = async ({
 
   return (
     <>
-      <h2 className="bg-black p-12 w-full text-white uppercase text-2xl text-center">
+      <h2 className="bg-black p-8 w-full text-white uppercase text-2xl text-center">
         {category}
       </h2>
-      <div className="pt-16 md:px-16 px-8  mx-auto">
+      <div className="md:w-[85%] p-10 md:p-0 md:pt-10 pt-10  mx-auto">
         {products.map((product) => (
           <div key={product.slug} className="mb-16">
             <div className="flex flex-col category gap-6 w-full items-center justify-center">
@@ -51,7 +51,7 @@ const CategoryPage = async ({
                 {product.isNew && (
                   <p className="uppercase text-[#d87d4a] mb-2">New product</p>
                 )}
-                <p className="text-3xl font-bold uppercase mb-6">
+                <p className="text-3xl font-bold uppercase mb-6 text-center product-name">
                   {product.name}
                 </p>
                 <p className="mb-6 text-center description">

@@ -17,8 +17,8 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row items-center  gap-4">
             <Link href="/products">HOME</Link>
             <Link href="/products/category/headphones">HEADPHONES</Link>
-            <Link href="/products/category/earphones">SPEAKERS</Link>
-            <Link href="/products/category/speakers">EARPHONES</Link>
+            <Link href="/products/category/speakers">SPEAKERS</Link>
+            <Link href="/products/category/earphones">EARPHONES</Link>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-8 justify-between items-center">

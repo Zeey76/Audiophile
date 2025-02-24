@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Gear = () => {
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-[3rem] md:h-[500px] justify-center items-center w-full px-[2rem] md:w-[80%] mx-auto mb-[7rem]">
+    <div className="flex flex-col-reverse md:flex-row gap-[3rem] md:h-[500px] justify-center items-center w-full md:w-[85%] p-10 md:p-0 mx-auto mb-[7rem]">
       <div className="w-full text-center md:text-left md:w-[50%] flex flex-col justify-center gap-6 rounded-sm">
         <h2 className="text-4xl uppercase">Bringing you the best audio gear</h2>
         <p>

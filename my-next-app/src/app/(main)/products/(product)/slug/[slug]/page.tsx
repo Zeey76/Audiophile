@@ -31,7 +31,7 @@ const ProdductPage = async ({
 
   return (
     <>
-      <div className="pt-4 md:px-16 px-8  mx-auto w-full">
+      <div className="md:w-[85%] p-10 md:p-0 md:pt-10  mx-auto w-full">
         <Back />
         <div className="w-full mb-10 flex flex-col sm:flex-row items-center justify-between gap-6 mx-auto">
           <div className="w-full relative sm:w-[43%]  sm:h-[500px] h-[400px] ">
@@ -54,7 +54,7 @@ const ProdductPage = async ({
               className="block sm:hidden rounded-md object-cover"
             />
           </div>
-          <div className="w-full sm:w-[57%] sm:max-w-[600px] sm:pl-8">
+          <div className="w-full sm:w-[57%] sm:max-w-[700px] sm:pl-8">
             {product.isNew && (
               <p className="uppercase text-[#d87d4a] mb-2">New product</p>
             )}

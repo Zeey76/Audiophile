@@ -20,8 +20,12 @@
 }
 
 @media (min-width: 700px) {
+  .header-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .header, .nav-bar, .footer {
-    max-width: 80%;
+    max-width: 85%;
     margin: 0 auto;
   }
 }
@@ -38,12 +42,14 @@
 }
 
 .category-image {
-  width: 500px;
+  width: 550px;
 }
 .description {
   text-align: left;
 }
-
+.product-name {
+  text-align: left;
+}
 
 }
 

@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <>
       {children}
-      <ul className="flex flex-col  sm:flex-row gap-4 items-center p-8 mb-[3rem] mt-[6rem]">
+      <ul className="flex flex-col w-full sm:flex-row gap-4 items-center md:w-[85%] p-10 md:p-0 mx-auto mb-[3rem] mt-[6rem]">
         {navItems.map((item) => (
           <li
             className="relative w-full bg-[#f1f1f1] text-white p-4 rounded-md flex flex-col gap-4 items-center justify-center mb-[5rem]"

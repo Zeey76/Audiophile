@@ -1,11 +1,17 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SignOut from "./SignOut";
 import Navbar from "./navbar";
+import Cart from "./Cart";
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
+  };
 
   const toggleNavBar = () => {
     setShowNavBar(!showNavBar);
@@ -23,15 +29,15 @@ const Header = () => {
     }
 
     return () => {
-      document.body.style.overflow = "auto"; 
+      document.body.style.overflow = "auto";
     };
   }, [showNavBar]);
 
   return (
     <>
       {/* Header Section */}
-      <div className="bg-black p-10 w-full">
-        <div className="relative">
+      <div className="bg-black header-section p-10 w-full">
+        <div className="relative w-full">
           <div className="header flex justify-between items-center text-white w-full">
             {/* Mobile Menu Button */}
             <button className="sm:hidden" onClick={toggleNavBar}>
@@ -68,12 +74,15 @@ const Header = () => {
 
             {/* Cart and Sign Out */}
             <div className="flex items-center gap-4">
-              <Image
-                src="/assets/shared/desktop/icon-cart.svg"
-                alt="Cart"
-                width={20}
-                height={20}
-              />
+              <button onClick={toggleCart}>
+                <Image
+                  src="/assets/shared/desktop/icon-cart.svg"
+                  alt="Cart"
+                  width={20}
+                  height={20}
+                />
+              </button>
+
               <SignOut />
             </div>
           </div>
@@ -82,6 +91,7 @@ const Header = () => {
 
       {/* Navbar (Visible only when toggled) */}
       {showNavBar && <Navbar closeNavBar={closeNavBar} />}
+      {showCart && <Cart/>}
     </>
   );
 };
